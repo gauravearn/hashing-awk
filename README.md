@@ -3,7 +3,7 @@ i previously wrote this in C++ (which i dont write anymore) and also in python a
 
 run the protein alignments as
 ```
- miniprot --gff genome.fasta rotein.fasta > alingment.gff
+ miniprot --gff genome.fasta protein.fasta > alignment.gff
 ```
 Gaurav Sablok \
 Academic Staff Member \
