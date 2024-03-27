@@ -7,11 +7,11 @@ alignment () BEGIN {
   declare -a filearray=()
   for i in "${directory}"/*.fasta;
      do 
-       filearray+=("${i%%.*}"}
+       filearray+=("${i%.}"}
      done
  for i in "${filearray[*]}";
     do 
-      miniprot -gff "${i}" protein.fasta > "${i}".gff
+      miniprot -gff "${i}.fasta" protein.fasta > "${i}".gff
     done
 declare -a ids=()
 declare -a startcoordinate=()
