@@ -19,7 +19,7 @@ declare -a stopcoordinate=()
 for i in "${i}".gff;
   do 
     cat "${i}" | grep "mRNA" | awk ' { print $4 }'>> startcoordinate.txt
-    cat "${i}" | grep "mRNA" | awk ' { print $4 }'>> stopcoordinate.txt
+    cat "${i}" | grep "mRNA" | awk ' { print $5 }'>> stopcoordinate.txt
     cat "${i}" | grep "mRNA" | awk ' { print $1 }'>> ids.txt
  done
 cat startcoordinate.txt | while read line; 
