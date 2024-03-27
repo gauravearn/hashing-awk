@@ -39,6 +39,6 @@ cat ids.txt | while read line;
       grep "${line}" *.fasta | cut -f 2 -d ":" | cut -f 2 -d "-" >> final.fasta
   done
 cat final.fasta | awk '!/^>/ { print $1 } ' > sequences.fasta
-cat final.fasta | awk '!/^>/ { print $1 } ' > ids.fasta
+cat final.fasta | awk '/^>/ { print $1 } ' > ids.fasta
 paste sequences.fasta startcoordinate.txt stopcoordinate.txt | awk substr( $1, $2, $3) > allsequences.fasta
 } END 
