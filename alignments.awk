@@ -5,10 +5,15 @@
 alignment () BEGIN {
 # reading the directory path fasta files and storing as a variable 
 directory="FILEPATH"
-  declare -a filearray=()
-  for i in "${directory}"/*.fasta;
+for i in "${directory}"/*.fasta;
+do 
+  awk '/^>/ {printf("\n%s\n",$0);next; } { printf("%s",$0);}  \
+                                                   END {printf("\n");}' "${i%.*}.new.fasta;
+done
+declare -a filearray=()
+  for i in "${directory}"/*.new.fasta;
      do 
-       filearray+=("${i%.}"}
+       filearray+=("${i%%.}"}
      done
  for i in "${filearray[*]}";
     do 
