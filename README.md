@@ -3,7 +3,13 @@ i previously wrote this in C++ (which i dont write anymore) and also in python a
 
 run the protein alignments as
 ```
- miniprot --gff genome.fasta protein.fasta > alignment.gff
+# if your fasta is multieline formatted then run this before running the alignments. it is included in the hashing_awk by default.
+for i in "${directory}"/*.fasta;
+do 
+  awk '/^>/ {printf("\n%s\n",$0);next; } { printf("%s",$0);}  \
+                                                   END {printf("\n");}' "${i%.*}.new.fasta;
+done
+miniprot --gff genome.fasta protein.fasta > alignment.gff
 ```
 Gaurav Sablok \
 Academic Staff Member \
