@@ -3,7 +3,7 @@ i previously wrote this in C++ (which i dont write anymore) and also in python a
 
 run the protein alignments as
 ```
-# if your fasta is multieline formatted then run this before running the alignments.
+# if your fasta is multiline formatted then run this before running the alignments.
 # it is included in the hashing_awk by default.
 for i in "${directory}"/*.fasta;
 do 
