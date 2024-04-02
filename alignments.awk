@@ -7,8 +7,8 @@ alignment () BEGIN {
 directory="FILEPATH"
 for i in "${directory}"/*.fasta;
 do 
-  awk '/^>/ {printf("\n%s\n",$0);next; } { printf("%s",$0);}  \
-                                                   END {printf("\n");}' "${i}" > "${i%.*}.new.fasta;
+       awk '/^>/ {printf("\n%s\n",$0);next; } { printf("%s",$0);}  \
+                                                       END {printf("\n");}' "${i}" > "${i%.*}.new.fasta;
 done
 declare -a filearray=()
   for i in "${directory}"/*.new.fasta;
