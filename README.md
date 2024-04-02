@@ -12,8 +12,8 @@ do
 done
 miniprot --gff genome.fasta protein.fasta > alignment.gff
 
-# actually i wrote a fast fasta conversion, you have a folder of the minprot alignment \
-#	and you have to generate the correponding fasta ids then see below \
+# actually i wrote a fast fasta conversion, you have a folder of the minprot alignment 
+#	and you have to generate the correponding fasta ids then see below 
 # this will generate all the fasta headers for the aligned regions for the mRNA.
 
 for i in *.gff; \
