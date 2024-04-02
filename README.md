@@ -7,8 +7,8 @@ run the protein alignments as
 # it is included in the hashing_awk by default.
 for i in "${directory}"/*.fasta;
 do 
-  awk '/^>/ {printf("\n%s\n",$0);next; } { printf("%s",$0);}  \
-                                                   END {printf("\n");}' "${i%.*}.new.fasta;
+     awk '/^>/ {printf("\n%s\n",$0);next; } { printf("%s",$0);}  \
+                                                     END {printf("\n");}' ${i} > "${i%.*}.new.fasta;
 done
 miniprot --gff genome.fasta protein.fasta > alignment.gff
 ```
