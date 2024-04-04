@@ -52,7 +52,7 @@ cat gen.fa | awk '{ print substr($1,5709,27033) }' \
 cat gen.fa | awk '{ print substr($1,9035,27033) }' \
 cat gen.fa | awk '{ print substr($1,9276,27033) }' \
 cat gen.fa | awk '{ print substr($1,9480,27033) }' \
-cat gen.fa | awk '{ print substr($1,10498,27033) }' \ 
+cat gen.fa | awk '{ print substr($1,10498,27033) }' \
 cat gen.fa | awk '{ print substr($1,10849,27033) }' \
 cat gen.fa | awk '{ print substr($1,11323,27033) }' \
 cat gen.fa | awk '{ print substr($1,12988,27033) }' \
