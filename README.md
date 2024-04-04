@@ -64,9 +64,9 @@ cat gen.fa | awk '{ print substr($1,26861,27033) }' \
 cat gen.fa | awk '{ print substr($1,27031,27033) }' 
 ```
 - run the awk classifier as shawk_classifier.sh and if you want the names just add ">" and you can invoke that as an indexed array as
-``
+```
 	for i in {0..length}; do echo $i; done
-``
+```
 Gaurav Sablok \
 Academic Staff Member \
 Bioinformatics \
