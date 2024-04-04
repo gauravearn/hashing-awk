@@ -2,7 +2,6 @@
 - awk function using the sbstr for the genome extraction
 - can be used for the genome annotations and subsequence extractions.
 - stores the sequences as indexed arrays using pattern matching.
-  
 run the protein alignments as
 ```
 # if your fasta is multiline formatted then run this before running the alignments.
@@ -13,7 +12,6 @@ do
                                                      END {printf("\n");}' ${i} > "${i%.*}.new.fasta;
 done
 miniprot --gff genome.fasta protein.fasta > alignment.gff
-
 # actually i wrote a fast fasta conversion, you have a folder of the minprot alignment 
 #	and you have to generate the correponding fasta ids then see below 
 # this will generate all the fasta headers for the aligned regions for the mRNA.
@@ -24,7 +22,6 @@ for i in *.gff; \
 		       | cut -f 1,2,3 -d "|" | cut -f 2 -d "|" \
 				                 | awk '{ print ">"$1 }' \
      done
-
 # reading the directory path fasta files and storing as a variable
 # shortened version. invoking a loop directly over the awk rather than storing and genrating the
 # awk classifier
@@ -41,10 +38,10 @@ for i in $(cat sample.gff | awk 'NR > 2 { print $1"\t"$3"\t"$4"\t"$5 }' | \
                                     echo "cat gen.fa | awk '{ print substr(echo$($1),$i,$j) }'"; \
                                                                  done | sed "s/echo/"\$1"/g"  | grep "^cat"
 } END >> writeawkclassifier.sh
-
+```
 - first run the alignments
 - second run the linearalization
-- run the awk and you will have the awk classifier where gen.fa is the file obtained after the linear. 
+- run the awk and you will have the awk classifier where gen.fa is the file obtained after the linear.
 cat gen.fa | awk '{ print substr($1,1,27033) }'
 cat gen.fa | awk '{ print substr($1,1,27033) }'
 cat gen.fa | awk '{ print substr($1,2973,27033) }'
@@ -65,6 +62,10 @@ cat gen.fa | awk '{ print substr($1,22394,27033) }'
 cat gen.fa | awk '{ print substr($1,26861,27033) }'
 cat gen.fa | awk '{ print substr($1,27031,27033) }'
 ```
+- run the awk classifier as shawk_classifier.sh and if you want the names just add ">" and you can invoke that as an indexed array as
+``
+	for i in {0..length}; do echo $i; done
+``
 Gaurav Sablok \
 Academic Staff Member \
 Bioinformatics \
