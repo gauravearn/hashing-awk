@@ -1,8 +1,8 @@
 # hashing-awk
-- awk function using the sbstr for the genome extraction
+- awk function using the substr for the genome extraction.
 - can be used for the genome annotations and subsequence extractions.
 - stores the sequences as indexed arrays using pattern matching.
-- -code reduced much, faster times, sample files added.
+- code reduced much, faster times, sample files added.
 run the protein alignments as
 ```
 # if your fasta is multiline formatted then run this before running the alignments.
