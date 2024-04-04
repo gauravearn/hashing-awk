@@ -2,6 +2,7 @@
 - awk function using the sbstr for the genome extraction
 - can be used for the genome annotations and subsequence extractions.
 - stores the sequences as indexed arrays using pattern matching.
+- -code reduced much, faster times, sample files added.
 run the protein alignments as
 ```
 # if your fasta is multiline formatted then run this before running the alignments.
@@ -42,25 +43,25 @@ for i in $(cat sample.gff | awk 'NR > 2 { print $1"\t"$3"\t"$4"\t"$5 }' | \
 - first run the alignments
 - second run the linearalization
 - run the awk and you will have the awk classifier where gen.fa is the file obtained after the linear.
-cat gen.fa | awk '{ print substr($1,1,27033) }'
-cat gen.fa | awk '{ print substr($1,1,27033) }'
-cat gen.fa | awk '{ print substr($1,2973,27033) }'
-cat gen.fa | awk '{ print substr($1,4335,27033) }'
-cat gen.fa | awk '{ print substr($1,5063,27033) }'
-cat gen.fa | awk '{ print substr($1,5709,27033) }'
-cat gen.fa | awk '{ print substr($1,9035,27033) }'
-cat gen.fa | awk '{ print substr($1,9276,27033) }'
-cat gen.fa | awk '{ print substr($1,9480,27033) }'
-cat gen.fa | awk '{ print substr($1,10498,27033) }'
-cat gen.fa | awk '{ print substr($1,10849,27033) }'
-cat gen.fa | awk '{ print substr($1,11323,27033) }'
-cat gen.fa | awk '{ print substr($1,12988,27033) }'
-cat gen.fa | awk '{ print substr($1,13147,27033) }'
-cat gen.fa | awk '{ print substr($1,13412,27033) }'
-cat gen.fa | awk '{ print substr($1,15080,27033) }'
-cat gen.fa | awk '{ print substr($1,22394,27033) }'
-cat gen.fa | awk '{ print substr($1,26861,27033) }'
-cat gen.fa | awk '{ print substr($1,27031,27033) }'
+cat gen.fa | awk '{ print substr($1,1,27033) }' \
+cat gen.fa | awk '{ print substr($1,1,27033) }' \
+cat gen.fa | awk '{ print substr($1,2973,27033) }' \
+cat gen.fa | awk '{ print substr($1,4335,27033) }' \
+cat gen.fa | awk '{ print substr($1,5063,27033) }' \
+cat gen.fa | awk '{ print substr($1,5709,27033) }' \
+cat gen.fa | awk '{ print substr($1,9035,27033) }' \
+cat gen.fa | awk '{ print substr($1,9276,27033) }' \
+cat gen.fa | awk '{ print substr($1,9480,27033) }' \
+cat gen.fa | awk '{ print substr($1,10498,27033) }' \ 
+cat gen.fa | awk '{ print substr($1,10849,27033) }' \
+cat gen.fa | awk '{ print substr($1,11323,27033) }' \
+cat gen.fa | awk '{ print substr($1,12988,27033) }' \
+cat gen.fa | awk '{ print substr($1,13147,27033) }' \
+cat gen.fa | awk '{ print substr($1,13412,27033) }' \
+cat gen.fa | awk '{ print substr($1,15080,27033) }' \
+cat gen.fa | awk '{ print substr($1,22394,27033) }' \
+cat gen.fa | awk '{ print substr($1,26861,27033) }' \
+cat gen.fa | awk '{ print substr($1,27031,27033) }' \
 ```
 - run the awk classifier as shawk_classifier.sh and if you want the names just add ">" and you can invoke that as an indexed array as
 ``
