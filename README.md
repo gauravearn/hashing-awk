@@ -42,7 +42,7 @@ for i in $(cat sample.gff | awk 'NR > 2 { print $1"\t"$3"\t"$4"\t"$5 }' | \
 ```
 - first run the alignments
 - second run the linearalization
-- run the awk and you will have the awk classifier where gen.fa is the file obtained after the linear.
+- run the awk and you will have the awk classifier where gen.fa is the file obtained after the linear. \
 cat gen.fa | awk '{ print substr($1,1,27033) }' \
 cat gen.fa | awk '{ print substr($1,1,27033) }' \
 cat gen.fa | awk '{ print substr($1,2973,27033) }' \
