@@ -1,6 +1,8 @@
 # hashing-awk
-i previously wrote this in C++ (which i dont write anymore) and also in python and R but if you want to see a awk version, so you can try this. You input directory file should be a single line formatted for the same. I will check this tonight for the final version release along with the test samples. specifically wrote for a project but can be implemented on anything. extracts using the ```substr``` and dont even have to cache load the file and it read io directly. adding the sample files for the analysis. some fasta files, some alignments so that this function can be invoked. 
-
+- awk function using the sbstr for the genome extraction
+- can be used for the genome annotations and subsequence extractions.
+- stores the sequences as indexed arrays using pattern matching.
+  
 run the protein alignments as
 ```
 # if your fasta is multiline formatted then run this before running the alignments.
