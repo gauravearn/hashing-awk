@@ -67,7 +67,7 @@ cat gen.fa | awk '{ print substr($1,27031,27033) }'
 ```
 	for i in {0..length}; do echo $i; done
 ```
-Gaurav Sablok \
+Gaurav \
 Academic Staff Member \
 Bioinformatics \
 Institute for Biochemistry and Biology \
